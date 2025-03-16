@@ -1,9 +1,15 @@
 #include <stdio.h>
+#include <unistd.h>
 #include <pthread.h>
 
 void *function()
 {
-	printf("Hello from thread\n");
+	printf("Thread started executing the function\n");
+
+	// Ensure that the threads run in parallel
+	sleep(3);
+
+	printf("Thread finished executing the function\n");
 }
 
 int main()
